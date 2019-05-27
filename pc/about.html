@@ -1,0 +1,413 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>腾庆科技</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="ctmargin">
+<div class="top">
+    <div class="ctmargin">
+        <div class="logo left"><img src="images/index_03.png"/></div>
+        <div class="navigation right">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="serviceitem.html">服务项目</a></li>
+                <li><a href="customer.html">增值服务</a></li>
+                <li><a href="case.html">成功案例</a></li>
+                <li class="click"><a href="about.html">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="slide" class="banner">
+	<ul>
+		<li v-for="banner in banners"><img :src="banner"></li>
+	</ul>
+	<div>
+		<span class="prev_btn"> < </span>
+		<span class="next_btn"> > </span>
+	</div>
+</div>
+</div>
+<div id="app" v-cloak>
+	<tabs v-model="activeKey" @on-click="doSomeThing">
+    	<pane label="联系我们" name="1" closable=true>
+        	<div class="introduce customerbox customerboxb customerboxf aboutpadding" >
+                <div class="ctmargin customer">
+                    <div class="customertitle">
+                        <div class="customertitleh2">
+                            <h2>contact us</h2>
+                            <h2>联系我们</h2>
+                        </div>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="contactusbox">
+                	<img src="images/aboutlogo_03.jpg"/>
+                	<div class="right contactusz">
+                    	<div class="contactuszbg">
+                        	<h4>腾庆是一家经营小程序代理、销售、服务于一体的科技公司。</h4>
+                        	<p>腾庆网络科技成立于2018年12月, 是一家经营互联网IT产品代理、销售、开发、服务于一体的科技公司,本公司拥有年轻的互联网行业精英成员, 在代理小程序的基础上,独立制作网页, APP开发,定制服务, ERP、OA、CRM、SaaS提供不同行业的行业服务，致力于通过产 品和服务，肋力中小企业向智能商业转型升级,用技术驱动商业革新,帮助企业商铺更好的引流,让其推广更高效。</p>
+                     	</div>
+                	</div>
+            	</div>
+                <div class="aboutmap">
+                	<img src="images/map.png"/>
+                </div>
+                <div class="clear"></div>
+            </div> 
+        </pane>
+        <pane label="企业荣誉" name="2" closable=true>
+        	<div class="introduce customerbox customerboxb customerboxf aboutpadding" >
+                <div class="ctmargin customer">
+                    <div class="customertitle honortitle">
+                        <div class="customertitleh2">
+                            <h2>Corporate honor</h2>
+                            <h2>企业荣誉</h2>
+                        </div>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="honorbox">
+                	<div class="honorboxm">
+                    	<div class="honorboxm">
+                            <div class="honorul" v-for="(honorul,index) in honoruls" >
+                                <h3>{{honorul.title}}</h3>
+                                <ul>
+                                    <li v-for="(honorli,index) in honorul.honorlis">
+                                        <img :src="honorli.img"/>
+                                        <p>{{honorli.text}}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="honorimg">
+                	<img src="images/honor_26.jpg"/ >
+                </div>
+        	</div> 
+        </pane>
+        <pane label="公司活动" name="3" closable=true>
+        	<div class="introduce customerbox customerboxb customerboxf aboutpadding" >
+                <div class="ctmargin customer">
+                    <div class="customertitle honortitle">
+                        <div class="customertitleh2">
+                            <h2>company activity</h2>
+                            <h2>公司活动</h2>
+                        </div>
+                        <span></span>
+                    </div>
+                </div>
+             </div>
+             <div class="activitybox">
+             	<div class="content-part part-tese">
+                    <div class="gallery_container">
+                        <div class="gallery_wrap threeD_gallery_wrap" style="margin-left: -270px;">
+                            <div v-for="(activityul, index) in activityuls" href="javascript:;" class="gallery_item threeD_gallery_item" :class="activityul.class">
+                                <div class="show activityul">
+                                	<img :src="activityul.img" />
+                                    <ul>
+                                        <li v-for="(activityli,index) in activityul.activitylis"><span></span>{{activityli.text}}</li>
+                                    </ul>
+                                    <div class="activityjoin">
+                                    	<a :href="activityul.href">快来加入我们一起</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="prev" href="javascript:;"></a> <a class="next" href="javascript:;"></a>
+                    </div>
+                </div>
+                <div class="clear"></div>
+             </div>
+             <div class="introduce customerbox customerboxb customerboxf aboutpadding" >
+                <div class="ctmargin customer">
+                    <div class="customertitle honortitle">
+                        <div class="customertitleh2">
+                            <h2>development history</h2>
+                            <h2>发展历程</h2>
+                        </div>
+                        <span></span>
+                    </div>
+                </div>
+             </div>
+             <div class="developbox">
+             	<div class="developboxm">
+                	<div class="developboxmx"></div>
+                    <div class="developfl">
+                    	<div class="developflz" v-for="(developflzy,index) in developflzys">
+                            <span class="right"></span>
+                            <div class="right developflzr">{{developflzy.date}}</div>
+                            <p class="right">{{developflzy.text}}</p>
+                        </div>
+                    </div>
+                    <div class="developfr">
+                    	<div class="developflz" v-for="(developflzr,index) in developflzrs">
+                            <span class="left"></span>
+                            <div class="left developflzr"><b>{{developflzr.date}}</b></div>
+                            <p class="left">{{developflzr.text}}</p>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+             </div>
+        </pane>
+        <pane label="加入我们" name="4" closable=true>
+        	<div class="introduce customerbox customerboxb customerboxf" >
+                <div class="ctmargin customer">
+                    <div class="customertitle">
+                        <div class="customertitleh2">
+                            <h2>Join us</h2>
+                            <h2>加入我们</h2>
+                        </div>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="recruitbox" v-for="(recruitbox, index) in recruitboxs">
+                	<div class="recruitboxl" :class="recruitbox.class">
+                    	<p v-for="(recruitboxp, index) in recruitbox.recruitboxps">{{recruitboxp.text}}</p>
+                    </div>
+                    <div class="recruitboxr" :class="recruitbox.classr">{{recruitbox.title}}</div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+        	</div>
+        </pane>
+        <pane label="商务合作" name="5" closable=false>
+        	<div class="introduce customerbox customerboxb customerboxf aboutpadding" >
+                <div class="ctmargin customer">
+                    <div class="customertitle honortitle">
+                        <div class="customertitleh2">
+                            <h2>business cooperation</h2>
+                            <h2>商务合作</h2>
+                        </div>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="honorbox businessbox">
+                	<div class="businessboxm">
+                    	<ul>
+                        	<li v-for="(business,index) in businesss">
+                            	<img :src="business.img"/>
+                    		</li>
+                    	</ul>
+                    </div>
+                </div>
+                <div class="ctmargin customer">
+                    <div class="customertitle">
+                        <div class="customertitleh2">
+                            <h2>To join</h2>
+                            <h2>我要加盟</h2>
+                        </div>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="joininbox">
+                	<div class="joinin">
+                        <div class="left joininl">
+                            <input type="text" placeholder="姓名">
+                            <input type="text" placeholder="电话">
+                            <button>提交</button>
+                        </div>
+                        <div class="left joininr">
+                        	<h3>联系我们</h3>
+                            <p>电话：0731-88185238</p>
+                            <p>QQ：9019765</p>
+                        </div>
+                    </div>
+                </div>
+        	</div>
+        </pane>
+    </tabs>
+</div>
+
+<div class="bottom">
+	<div class="ctmargin bottomcm">
+    	<div class="left bottomcmba"><img src="images/index_60.jpg"/></div>
+        <div class="left bottomcmdz">
+        	<p>地址：湖南省长沙市开福区绿地中心T3</p>
+            <p>电话TEL:0731-88185238</p>
+            <p>主营范围：小程序开发、网站设计、app开发、定制开发、ERP、OA、CRM、Saas</p>
+        </div>
+        <div class="right"><img src="images/index_59.png"/></div>
+    </div>
+</div>
+
+<script src="js/vue.js"></script>
+<script src="js/style.js" ></script>
+<script src="js/tabs.js"></script>
+<script src="js/pane.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-yys-slider.js"></script>
+<script src="js/xcConfirm.js"></script>
+<div class="Informationfloat">
+	<div class="sgBtn" id="btn1">
+    	<img src="images/phone.png" /><p>热线电话</p>
+    </div>
+	<div class="sgBtn" id="btn2">
+    	<img src="images/wechat.png" /><p>微信咨询</p>
+    </div>
+	<div class="sgBtn" >
+    	<a href="tencent://message/?uin=9019765&Site=&menu=yes">
+    	<img src="images/qq.png" /><p>在线QQ</p>
+        </a>
+    </div>
+	<div class="sgBtn" ><a href="#">top</a></div>
+</div>  
+<script type="text/javascript">
+	var app = new Vue({
+		el:'#app',
+		data: {
+			activeKey: '1',
+			honoruls:[
+				{
+					title:"行业独家技术知识产权保护",
+					honorlis:[
+						{
+							img:'images/honor_03.jpg',
+							text:'三星服务认证证书'
+							},
+						{
+							img:'images/honor_08.jpg',
+							text:'拥有多项软件著作证书'
+							},
+						{
+							img:'images/honor_05.jpg',
+							text:'核心技术专利发明申报'
+							}
+					]
+				},
+				{
+					title:"荣获多家机构权威认证",
+					honorlis:[
+						{
+							img:'images/honor_14.jpg',
+							text:'央视优选品牌'
+							},
+						{
+							img:'images/honor_20.jpg',
+							text:'中国商业联合会执行委员'
+							},
+						{
+							img:'images/honor_17.jpg',
+							text:'中国认证联盟示范企业'
+							}
+					]
+				}
+			],
+			businesss:[
+				{img:'images/logo_03.jpg'},{img:'images/logo_05.jpg'},{img:'images/logo_07.jpg'},{img:'images/logo_09.jpg'},{img:'images/logo_11.jpg'},{img:'images/logo_13.jpg'},{img:'images/logo_21.jpg'},{img:'images/logo_22.jpg'},{img:'images/logo_24.jpg'},{img:'images/logo_25.jpg'},{img:'images/logo_26.jpg'},{img:'images/logo_27.jpg'},{img:'images/logo_34.jpg'},{img:'images/logo_35.jpg'},{img:'images/logo_36.jpg'},{img:'images/logo_37.jpg'},{img:'images/logo_38.jpg'},{img:'images/logo_39.jpg'},{img:'images/logo_46.jpg'},{img:'images/logo_47.jpg'},{img:'images/logo_48.jpg'},{img:'images/logo_49.jpg'},{img:'images/logo_50.jpg'},{img:'images/logo_51.jpg'}
+			],
+			recruitboxs:[
+				{
+					class:"left",
+					classr:"rightfloat salefloat",
+					title:"销售代表",
+					recruitboxps:[
+						{text:"人数：10名"},{text:"工资待遇：8000-12000元"},{text:"任职资格："},{text:"1、对销售工作有较高的热情,能吃苦耐劳；"},{text:"2、具备较强的学习能力和优秀的沟通能力；"},{text:"3、性格坚韧,思维敏捷,具备良好的应变能力和承压能力；"},{text:"4、有敏锐的市场洞察力,有强烈的事业心、责任心和积极的工作态度,有相关销售工作经验者优先。"},{text:"5、有建材行业，家具订制行业等，其它相关行业销售经验优先。"}
+					]
+					},
+				{
+					class:"right rpadding",
+					classr:"leftfloat cityfloat",
+					title:"城市合伙人",
+					recruitboxps:[
+						{text:"人数：若干"},{text:"工资待遇：8000-12000元"},{text:"任职资格："},{text:"1、如果您想自己创业,拥有一份你没有项目,没有资金,没有经验,那您可以联系我；"},{text:"2、我们需要有激情,有上进心的年轻人；"},{text:"3、互联网行业招城市合伙人；"}
+					]
+					},
+				{
+					class:"left",
+					classr:"rightfloat webfloat",
+					title:"Web前端开发设计师",
+					recruitboxps:[
+						{text:"人数：6名"},{text:"工资待遇：3500-10000元"},{text:"任职资格："},{text:"1、大专以上学历，计算机、设计相关专业；"},{text:"2、有一年及以上工作经验，有成熟作品；"},{text:"3、能够独立设计和制作网页；"},{text:"4、有良好上进心和团队精神、责任感强。"}
+					]
+					},
+				{
+					class:"right rpadding",
+					classr:"leftfloat designfloat",
+					title:"网页设计师",
+					recruitboxps:[
+						{text:"人数：3名  "},{text:"工资待遇：4500-8000元"},{text:"任职资格："},{text:"1、大专以上学历，计算机、设计相关专业；"},{text:"2、有一年及以上工作经验，有成熟作品；"},{text:"3、能独立制作网页设计、平面广告、图片处理，有良好的色彩感觉；"},{text:"4、能独立完成整个网站美工部分的设计，了解H5或者JS;"},{text:"5、 对于网站的平面效果、立体效果、色彩效果、动画效果有很强的把握能力，有独特的见解、独立思考能力和创新意识；"},{text:"6、有良好上进心和团队精神、责任感强。"}
+					]
+					},
+				{
+					class:"left",
+					classr:"rightfloat phonefloat",
+					title:"电话销售",
+					recruitboxps:[
+						{text:"人数：10名"},{text:"工资待遇：3000-6500元"},{text:"任职资格："},{text:"1、活泼开朗，有经验者优先；"},{text:"2、具备良好的沟通协调能力。"}
+					]
+					}
+			],
+			activityuls:[
+				{
+					class:"front_side",
+					img:"images/activity_03.png",
+					href:"",
+					activitylis:[
+						{text:"时间：2019.3.8"},{text:"地址：绿地中心"},{text:"活动内容：为了给公司的女同胞们过节，我们去大吃大喝一顿。"}
+					]
+					},
+				{
+					class:"gallery_left_middle",
+					img:"images/activity_06.png",
+					href:"",
+					activitylis:[
+						{text:"时间：2019.3.25"},{text:"地址：人才市场"},{text:"活动内容：我们在人才市场招聘，只为遇见最美好的您。"}
+					]
+					},
+				{
+					class:"gallery_right_middle",
+					img:"images/activity_03.png",
+					href:"",
+					activitylis:[
+						{text:"时间：2019.3.8"},{text:"地址：绿地中心"},{text:"活动内容：为了给公司的女同胞们过节，我们去大吃大喝一顿。"}
+					]
+					},
+				{
+					class:"gallery_out",
+					img:"images/activity_06.png",
+					href:"",
+					activitylis:[
+						{text:"时间：2019.3.25"},{text:"地址：人才市场"},{text:"活动内容：我们在人才市场招聘，只为遇见最美好的您。"}
+					]
+					}
+			],
+			developflzys:[
+				{
+					date:"2019.3",
+					text:"腾庆网络科技有限公司第一个小程序问世；"
+					},
+				{
+					date:"2019.3",
+					text:"腾庆网络科技有限公司第一个小程序问世；"
+					}
+			],
+			developflzrs:[
+				{
+					date:"2018.12",
+					text:"腾庆网络科技有限公司成立；"
+					},
+				{
+					date:"2018.12",
+					text:"腾庆网络科技有限公司成立；"
+					}
+			]
+			},
+			methods:{
+				doSomeThing:function(){
+				//console.log("Do something!");
+					}
+				}
+			})
+	$(function(){
+		$('.content-part.part-tese').addClass('show');
+		$('.gallery_container').gallery_slider({imgNum: 4});
+	})
+</script>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>腾庆科技</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div  id="ctmargin">
+<div class="top">
+    <div class="ctmargin">
+        <div class="logo left"><img src="images/index_03.png"/></div>
+        <div class="navigation right">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li class="click"><a href="serviceitem.html">服务项目</a></li>
+                <li><a href="customer.html">增值服务</a></li>
+                <li><a href="case.html">成功案例</a></li>
+                <li><a href="about.html">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="slide" class="banner">
+	<ul>
+		<li v-for="banner in banners"><img :src="banner"></li>
+	</ul>
+	<div>
+		<span class="prev_btn"> < </span>
+		<span class="next_btn"> > </span>
+	</div>
+</div>
+<div class="ctmargin cbtq">
+	<h2>核心业务<span></span></h2>
+    <ul>
+    	<li v-for="(cbtq,index) in cbtqs" :class="cbtq.class">
+        	<div class="cbtqimg"><img :src="cbtq.img"/></div>
+            <h4>{{cbtq.title}}</h4>
+            <p>{{cbtq.text}}</p>
+            <div class="clear"></div>
+        </li>
+    </ul>
+</div>
+<div class="introduce smallprogrambox">
+	<div class="ctmargin smallprogramkf">
+    	<h2>小程序开发</h2>
+    	<img src="images/serviceitem_03.png"/>
+        <div class="right introduces smallprograms">
+            <p>微信小程序前景无限 </p>
+            <p>微信之父张小龙曾预言：未来2年内，小程序将取代绝大多数App！</p>
+    		<p>依傍着微信10亿用户流量平台，</p>
+    		<p>小程序将迎来超速发展，中小企业都将快速接入小程序。</p>
+    		<p>小程序将是未来所有中小企业的标配，</p>
+    		<p>就像现在的企业都会配置网站一样。</p>
+        </div>
+    </div>
+</div>
+<div class="introduce smallprogrambox webdesignbox">
+	<div class="ctmargin smallprogramkf webdesign">
+    	<h2>网页设计</h2>
+        <div class="left introduces webdesigns">
+            <p>在互联网迅速发展的今天，企业网站已经非常普及了，</p>
+            <p>已经成为了公司在网络上宣传和推广的门面。</p>
+    		<p>而且，企业需要的已经不光是传统的网站，</p>
+    		<p>所以，传统的网站现在已经不可以满足目前网络市场的需求了。</p>
+    		<p>企业对网站的需求已经要能够成为市场推广的核心力量，</p>
+    		<p>能够直接带来经济效益；</p>
+            <p>好的网页设计可以除了能展示企业产品的特性，</p>
+            <p>而且可以让客户直接在线下单购买所需要的产品。 </p>
+        </div>
+        <img src="images/serviceitem_07.png"/>
+    </div>
+</div>
+<div class="introduce smallprogrambox processbox">
+	<div class=" process">
+    	<h2>服务流程</h2>
+        <h4>service procedure</h4>
+        <span></span>
+        <p>在代理微容小程序的基础上，独立制作网页，提供不同行业的行业服务，致力于通过产品和服务，肋力中小企业向智能商业转型升级，用技术驱动商业革新，帮助企业商铺更好的引流，让其推广更高效。</p>
+        <img src="images/serviceitem_11.png"/>
+    </div>
+</div>
+<div class="bottom">
+	<div class="ctmargin bottomcm">
+    	<div class="left bottomcmba"><img src="images/index_60.jpg"/></div>
+        <div class="left bottomcmdz">
+        	<p>地址：湖南省长沙市开福区绿地中心T3</p>
+            <p>电话TEL:0731-88185238</p>
+            <p>主营范围：小程序开发、网站设计、app开发、定制开发、ERP、OA、CRM、Saas</p>
+        </div>
+        <div class="right"><img src="images/index_59.png"/></div>
+    </div>
+</div>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/style.js" ></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-yys-slider.js"></script>
+<script src="js/pane.js"></script>
+<script src="js/xcConfirm.js"></script>
+<div class="Informationfloat">
+	<div class="sgBtn" id="btn1">
+    	<img src="images/phone.png" /><p>热线电话</p>
+    </div>
+	<div class="sgBtn" id="btn2">
+    	<img src="images/wechat.png" /><p>微信咨询</p>
+    </div>
+	<div class="sgBtn" >
+    	<a href="tencent://message/?uin=9019765&Site=&menu=yes">
+    	<img src="images/qq.png" /><p>在线QQ</p>
+        </a>
+    </div>
+	<div class="sgBtn" ><a href="#">top</a></div>
+</div> 
+</body>
+</html>

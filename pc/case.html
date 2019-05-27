@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>腾庆科技</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div  id="ctmargin">
+<div class="top">
+    <div class="ctmargin">
+        <div class="logo left"><img src="images/index_03.png"/></div>
+        <div class="navigation right">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="serviceitem.html">服务项目</a></li>
+                <li><a href="customer.html">增值服务</a></li>
+                <li class="click"><a href="case.html">成功案例</a></li>
+                <li><a href="about.html">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="casesetjbox">
+	<div class="ctmargin casesetj">
+        <div class="casesetjq">
+            <b class="left">行业：</b>
+            <ul class="left">
+            	<li v-for="(casesetjz,index) in casesetjzs" v-on:click="guige(index)" v-bind:class="{current:index==guigeSpan} "  >{{casesetjz.text}}</li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="casesetjq">
+            <b class="left">分类：</b>
+            <ul class="left">
+            	<li v-for="(casesetjz,index) in casesetjzs2" v-on:click="kouwei(index)" v-bind:class="{current:index==kouweiSpan} "  >{{casesetjz.text}}</li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="casesetjq">
+            <b class="left">类型：</b>
+            <ul class="left">
+            	<li v-for="(casesetjz,index) in casesetjzs3" v-on:click="kouweis(index)" v-bind:class="{current:index==kouweisSpan} "  >{{casesetjz.text}}</li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+		<div class="casesetjq">
+        	<b class="left">搜索：</b>
+            <div class="left casesetjsearch">
+        		<input type="text" placeholder="点击搜索按钮筛选" /><button> 搜索</button>
+            </div>
+    	</div>
+    </div>
+</div>
+<div class="caseimg">
+	<ul>
+    	<li v-for="(caseimg,index) in caseimgs">
+        	<img :src="caseimg.img"/>
+        </li>
+    </ul>
+</div>
+</div>
+<div class="clear"></div>
+<div id="app">
+    <pageination :total="model.total" :size="model.size" :page="model.page" :changge="pageFn" ></pageination>
+</div>
+<div class="bottom">
+	<div class="ctmargin bottomcm">
+    	<div class="left bottomcmba"><img src="images/index_60.jpg"/></div>
+        <div class="left bottomcmdz">
+        	<p>地址：湖南省长沙市开福区绿地中心T3</p>
+            <p>电话TEL:0731-88185238</p>
+            <p>主营范围：小程序开发、网站设计、app开发、定制开发、ERP、OA、CRM、Saas</p>
+        </div>
+        <div class="right"><img src="images/index_59.png"/></div>
+    </div>
+</div>
+<script>
+  window.onload=function () {
+      var app = new Vue({
+          el: '#app',
+          data:function() {
+              return {
+                  model:{
+                      total:30,//总页数
+                      size:1,//每页显示条目个数不传默认10
+                      page:1,//当前页码
+                  }
+              }
+          },
+          methods:{
+              //页码切换执行方法
+              pageFn:function(val){
+                  this.model.page=val;
+                  console.log(val);
+              }
+          }
+      })
+  }
+
+
+</script>
+<script src="js/vue.js"></script>
+<script src="js/pageination.js"></script>
+<script src="js/style.js" ></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/xcConfirm.js"></script>
+<div class="Informationfloat">
+	<div class="sgBtn" id="btn1">
+    	<img src="images/phone.png" /><p>热线电话</p>
+    </div>
+	<div class="sgBtn" id="btn2">
+    	<img src="images/wechat.png" /><p>微信咨询</p>
+    </div>
+	<div class="sgBtn" >
+    	<a href="tencent://message/?uin=9019765&Site=&menu=yes">
+    	<img src="images/qq.png" /><p>在线QQ</p>
+        </a>
+    </div>
+	<div class="sgBtn" ><a href="#">top</a></div>
+</div> 
+</body>
+</html>
